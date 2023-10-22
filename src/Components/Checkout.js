@@ -17,6 +17,7 @@ function Checkout(props) {
         </div>
     )
 }
+
 const mapStateToProps = (state) => ({
     count: state.counter.count,
     total: state.counter.total,
