@@ -1,8 +1,9 @@
 import React from 'react'
 import '../CSS/Checkout.css'
 import Subtotal from './Subtotal';
+import { connect } from 'react-redux';
 
-export default function Checkout() {
+function Checkout(props) {
     return (
         <div className='checkout'>
             <div className="checkout_left">
@@ -12,7 +13,13 @@ export default function Checkout() {
                     Your Cart is Ready
                 </h2>
             </div>
-            <Subtotal value={453}/>
+            <Subtotal count={props.count} total={props.total} />
         </div>
     )
 }
+const mapStateToProps = (state) => ({
+    count: state.counter.count,
+    total: state.counter.total,
+});
+
+export default connect(mapStateToProps)(Checkout);

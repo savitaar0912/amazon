@@ -1,0 +1,52 @@
+Certainly! I'll provide an overview of how the components, actions, reducers, and Redux store are being used in your code. This will help you understand how everything fits together in your Redux-based shopping cart application.
+
+Redux Store Setup (store/index.js):
+
+You create a Redux store using createStore from Redux.
+You combine multiple reducers into a root reducer using combineReducers.
+
+Root Reducer (store/reducers.js):
+
+The root reducer combines different reducers into a single reducer, allowing you to manage different parts of your application's state separately.
+Reducer (store/reducers/addbasket_reducer.js):
+
+This reducer handles the state related to the shopping cart.
+It has an initial state with properties like count and total.
+It defines how the state should be updated based on actions like 'ADD_TO_BASKET' and 'REMOVE_FROM_BASKET'.
+
+Actions (store/actions/basketActions.js):
+
+You have action creators like addToBasket and decrement that return objects with a type property.
+These action creators are used to define the actions that can be dispatched to update the state.
+React Components:
+
+Your React components are responsible for rendering the UI and interacting with the Redux store.
+For example, the Product component displays a product and has an "Add to Cart" button.
+The Navbar component displays the navigation bar with a shopping cart icon.
+The Checkout component displays the checkout page.
+The Subtotal component displays the subtotal information.
+
+Connecting Components to Redux (Using connect from react-redux):
+
+You use connect to connect your components to the Redux store and specify which parts of the state should be mapped to props.
+
+For example, in the Product component, you connect it to the Redux store and map the count property from the state to props. You also map the addToBasket action to props.
+
+In the Navbar and Checkout components, you similarly connect them to the Redux store to access the count and total properties.
+
+Dispatching Actions:
+
+When the "Add to Cart" button is clicked in the Product component, you dispatch the addToBasket action. This updates the shopping cart state in the Redux store.
+Passing Data to Components:
+
+You pass data to your components as props. For example, in the Subtotal component, you pass the value, count, and total as props to display the cart total.
+UI and Event Handling:
+
+Your components are responsible for rendering the UI and handling user interactions.
+The UI elements like buttons, checkboxes, and images are displayed based on the state properties and user actions.
+Routing:
+
+You're using React Router (BrowserRouter, Route, Routes, and Link) for navigation and routing between different components.
+CSS Styling:
+
+You're applying CSS styles to your components to control their appearance.

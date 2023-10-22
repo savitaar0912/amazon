@@ -4,8 +4,9 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import SearchIcon from '@mui/icons-material/Search';
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 
-export default function Navbar() {
+function Navbar(props) {
   return (
     <div className='nav_bar'>
       <div className="navbar_logo">
@@ -54,12 +55,17 @@ export default function Navbar() {
           </span>
         </div>
         <div className="navbar_opt">
-          <Link to="/checkout"> 
+          <Link to="/checkout">
             <ShoppingCartIcon className="navbar_cart" />
-            <span className="line2 navbar_cart_count">0 Cart</span>
+            <span className="line2 navbar_cart_count">{props.count} Cart</span>
           </Link>
         </div>
       </div>
     </div>
   )
 }
+const mapStateToProps = (state) => ({
+  count: state.counter.count,
+});
+
+export default connect(mapStateToProps)(Navbar);

@@ -1,10 +1,16 @@
 import "../CSS/Product.css"
 import React from 'react'
-import { increment, decrement } from "../Store/action/basketaction"
+import { connect } from 'react-redux';
+import { addToBasket } from "../Store/basketSlice/addbasket_reducer";
 
-export default function Product(props) {
-    let {title , price , rating , image } = props
-    console.log(increment)
+function Product(props) {
+    let { title, price, rating, image , addToBasket } = props
+
+    const handleAddToCart = () => {
+        // Dispatch the addToBasket action with the product price as the payload
+        addToBasket({price});
+    };
+
     return (
         <div className='product'>
             <div className="product_info">
@@ -16,7 +22,7 @@ export default function Product(props) {
                     <strong>{price}</strong>
                 </p>
                 <div className="product_rating">
-                    {Array(rating).fill().map((_,i)=>{
+                    {Array(rating).fill().map((_, i) => {
                         return (<span key={i}>⭐</span>)
                     })}
                 </div>
@@ -24,7 +30,14 @@ export default function Product(props) {
             <div className="product_img">
                 <img src={image} alt="" />
             </div>
-            <button onClick={increment}>Add to Cart</button>
+            <button onClick={handleAddToCart}>Add to Cart</button>
         </div>
     )
 }
+
+const mapStateToProps = (state) => ({
+    count: state.counter.count,
+    total: state.counter.total,
+});
+
+export default connect(mapStateToProps, { addToBasket })(Product);
