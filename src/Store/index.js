@@ -15,3 +15,10 @@ const store = configureStore({
 });
 
 export default store;
+
+
+// if we don't use combine, we do this way:
+// const store = configureStore({
+//   reducer: basketReducer,
+// });
+
