@@ -23,7 +23,7 @@ export default function CheckoutProduct(props) {
                     <div className="productdetails">
 
                         <p>
-                            {title}
+                            <strong>{title}</strong>
                         </p>
                         <p className="checkout_product_price">
                             <small>$</small>
@@ -34,10 +34,10 @@ export default function CheckoutProduct(props) {
                                 return (<span key={i}>⭐</span>)
                             })}
                         </p>
+                        <div className="removecart">
+                            <button onClick={handleRemoveFromCart}>Remove from Cart</button>
+                        </div>
                     </div>
-                </div>
-                <div className="removecart">
-                    <button onClick={handleRemoveFromCart}>Remove from Cart</button>
                 </div>
             </div>
         </>

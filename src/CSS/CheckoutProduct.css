@@ -25,6 +25,9 @@
 
 .checkout_product_img {
   margin: 10px;
+  object-fit: contain;
+  height: 200px;
+  width: 200px;
 }
 
 .checkout_product_img > img {
@@ -35,8 +38,10 @@
 }
 
 .removecart{
-  margin: auto;
+  position: relative;
+  bottom: -35px;
 }
+
 .removecart button {
   display: flex;
   flex-direction: column;
