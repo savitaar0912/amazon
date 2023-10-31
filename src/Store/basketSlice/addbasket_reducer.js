@@ -2,8 +2,10 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
+  //we could have done it with using only items and then iteratinng the price and items.length
   count: 0, // Number of items in the cart
   total: 0, // Total price
+  items: []
 };
 
 const basketSlice = createSlice({
@@ -13,15 +15,26 @@ const basketSlice = createSlice({
     addToBasket: (state, action) => {
       state.count += 1;
       state.total += action.payload.price; // This line should update the total correctly
+      state.items = [...state.items, action.payload]
+      // console.log(state.items)
     },
     removeFromBasket: (state, action) => {
-      const updatedTotal = state.total - action.payload.price;
-      const updatedCount = state.count - 1;
-      state.count = updatedCount >= 0 ? updatedCount : 0;
-      state.total = updatedTotal >= 0 ? updatedTotal : 0;
-    },
+      // Find the index of the item to remove based on the payload (e.g., product title)
+      const itemIndex = state.items.findIndex(item => item.title === action.payload.title);
+
+      if (itemIndex !== -1) {
+        // Item found, remove it from the items array
+        state.items = state.items.filter((item, index) => index !== itemIndex);
+
+        // Update the count and total
+        state.count -= 1;
+        state.total -= action.payload.price;
+      }
+    }
   },
 });
 
 export const { addToBasket, removeFromBasket } = basketSlice.actions;
+export const selectBasket = (state) => state.counter.items;
+
 export default basketSlice.reducer;

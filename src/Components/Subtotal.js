@@ -1,6 +1,5 @@
 import React from 'react'
 import '../CSS/Subtotal.css'
-import { connect } from 'react-redux';
 
 function Subtotal(props) {
     
@@ -25,8 +24,8 @@ function Subtotal(props) {
     )
 }
 
-const mapStateToProps = (state) => ({
-    total: state.counter.total, // Map the total from the Redux state to props
-});
+// const mapStateToProps = (state) => ({
+//     total: state.counter.total, // Map the total from the Redux state to props
+// });
 
-export default connect(mapStateToProps)(Subtotal);
+export default Subtotal;
