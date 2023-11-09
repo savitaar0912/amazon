@@ -22,7 +22,7 @@ function Checkout(props) {
                     Your Cart is Ready
                 </h2>
                 {basketItems.map((item) => {
-                    return <CheckoutProduct title={item.title} price={item.price} rating={item.rating} image={item.image} />
+                    return <CheckoutProduct key={item.id} title={item.title} price={item.price} rating={item.rating} image={item.image} />
                 })}
             </div>
             <Subtotal count={props.count} total={props.total} />

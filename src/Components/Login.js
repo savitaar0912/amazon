@@ -2,24 +2,23 @@ import '../CSS/Login.css'
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectUserEmail, setUserLogin, setUserLogout } from '../Store/user/userSlice';
 import { auth } from '../firebase'
+import { selectUserEmail, setUserLogin } from '../Store/user/userSlice';
 import { useNavigate } from 'react-router-dom';
 
 export default function Login() {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const userEmail = useSelector(selectUserEmail)
     const dispatch = useDispatch()
     const navigate = useNavigate()
+    const userEmail = useSelector(selectUserEmail)
 
     const setUser = (user) => {
         console.log(user)
-        console.log(user.multiFactor.user)
+        // console.log(user.multiFactor.user)
         dispatch(
             setUserLogin({
-                name: user.displayName,
                 email: user.email,
             })
         )
@@ -31,8 +30,9 @@ export default function Login() {
                 setUser(user);
                 navigate("/")
             }
-        })
-    }, [userEmail])
+        });
+    }, [userEmail]);
+
 
     const handleEmailChange = (e) => {
         setEmail(e.target.value);
@@ -42,41 +42,29 @@ export default function Login() {
         setPassword(e.target.value);
     };
 
-    const handleLogin = async () => {
-        // Implement your login logic here
-        console.log('login start')
-        if (!userEmail) {
-            auth.signInWithEmailAndPassword(email, password)
-                .then((result) => {
-                    console.log("Login successful. Result:", result);
-                    setUser(result.user);
-                    console.log("User:", result.user);
-                    // navigate('/');
-                })
-                .catch((err) => {
-                    console.error("Login error:", err.message);
-                    // alert(err.message);
-                });
-        }
-        else if(userEmail){
-            dispatch(setUserLogout())
+    const handleLogin = async (e) => {
+        e.preventDefault();
+        // console.log('Login start');
+        try {
+            const result = await auth.signInWithEmailAndPassword(email, password);
+            const user = result.user;
+            console.log('Login successful. Result:', user);
+            setUser(user);
+        } catch (err) {
+            console.error('Login error:', err.message);
         }
     };
 
-
-    // console.log(userEmail);
-
-
-    const handleSignUp = () => {
+    const handleSignUp = (e) => {
         // Implement your login logic here
-        // auth.createUserWithEmailAndPassword(email, password)
-        //     .then((result) => {
-        //         console.log(result.user)
-        //         alert('Account created')
-        //     })
-        //     .catch((err) => alert(err.message));
-        dispatch(setUserLogout())
-        console.log("it'll be null" ,userEmail)
+        e.preventDefault();
+        auth.createUserWithEmailAndPassword(email, password)
+            .then((result) => {
+                console.log(result)
+                alert('Account created')
+                navigate('/')
+            })
+            .catch((err) => alert(err.message));
     };
 
     return (

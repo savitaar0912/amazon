@@ -3,21 +3,30 @@ import React from 'react'
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import SearchIcon from '@mui/icons-material/Search';
-import { Link} from "react-router-dom";
-import { connect, useSelector } from "react-redux";
-import { selectUserName } from "../Store/user/userSlice";
+import { Link } from "react-router-dom";
+import { connect, useDispatch, useSelector } from "react-redux";
+import { selectUserEmail, setUserLogout } from "../Store/user/userSlice";
+import { auth } from "../firebase";
 
 function Navbar(props) {
 
-  const userName = useSelector(selectUserName)
-  // const dispatch = useDispatch()
-  // const navigate = useNavigate()
+  const userEmail = useSelector(selectUserEmail)
+  const dispatch = useDispatch()
 
-  // const signout = async () => {
-  //   dispatch(setUserLogout())
-  //   navigate('/')
-  //   console.log(userName)
-  // }
+  const handleAuthentication = () => {
+    console.log('handleAuthentication called');
+    if (userEmail) {
+      console.log('Signing out...');
+      auth.signOut()
+        .then(() => {
+          console.log('Sign-out successful');
+          dispatch(setUserLogout());
+        })
+        .catch((error) => {
+          console.error('Sign-out error:', error.message);
+        });
+    }
+  }
 
   return (
     <div className='nav_bar'>
@@ -49,12 +58,11 @@ function Navbar(props) {
           <span className='line2'>EN</span>
         </div>
 
-        <Link to='/login'>
-          <div className="navbar_option">
+        <Link to={!userEmail && '/login'}>
+          <div className="navbar_option" onClick={handleAuthentication}>
             <span className="line1">
-              Hello, {userName ? 'sign out' : 'sign in'}
+              Hello, {userEmail ? 'Sign out' : 'Sign In'}
             </span>
-            {/* <button onClick={signout}> Sign out</button> */}
             <span className="line2">
               Accounts & Lists
             </span>
