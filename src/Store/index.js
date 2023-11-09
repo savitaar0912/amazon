@@ -1,10 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { combineReducers } from 'redux';
 import basketReducer from './basketSlice/addbasket_reducer';
+import userSlice from './user/userSlice';
 
 // Combine reducers
 const rootReducer = combineReducers({
   counter: basketReducer,
+  user: userSlice
   // Add more reducers here as needed
 });
 

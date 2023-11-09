@@ -13,7 +13,7 @@ function Product(props) {
 
     useEffect(() => {
         // to check if items are being sent to data layer(store)
-        console.log(items)
+        // console.log(items)
     }, [items])
 
     return (
