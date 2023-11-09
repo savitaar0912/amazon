@@ -3,10 +3,22 @@ import React from 'react'
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import SearchIcon from '@mui/icons-material/Search';
-import { Link } from "react-router-dom";
-import { connect } from "react-redux";
+import { Link} from "react-router-dom";
+import { connect, useSelector } from "react-redux";
+import { selectUserName } from "../Store/user/userSlice";
 
 function Navbar(props) {
+
+  const userName = useSelector(selectUserName)
+  // const dispatch = useDispatch()
+  // const navigate = useNavigate()
+
+  // const signout = async () => {
+  //   dispatch(setUserLogout())
+  //   navigate('/')
+  //   console.log(userName)
+  // }
+
   return (
     <div className='nav_bar'>
       <div className="navbar_logo">
@@ -37,14 +49,18 @@ function Navbar(props) {
           <span className='line2'>EN</span>
         </div>
 
-        <div className="navbar_option">
-          <span className="line1">
-            Hello, sign in
-          </span>
-          <span className="line2">
-            Accounts & Lists
-          </span>
-        </div>
+        <Link to='/login'>
+          <div className="navbar_option">
+            <span className="line1">
+              Hello, {userName ? 'sign out' : 'sign in'}
+            </span>
+            {/* <button onClick={signout}> Sign out</button> */}
+            <span className="line2">
+              Accounts & Lists
+            </span>
+          </div>
+        </Link>
+
 
         <div className="navbar_option">
           <span className="line1">

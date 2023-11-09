@@ -1,0 +1,56 @@
+/* src/components/Login.css */
+.login {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  /* margin-top: 60px; */
+  height: 90.9vh;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+
+.signin_logo img {
+  margin-bottom: 20px;
+  border-radius: 10px;
+  padding: 10px 8px 0px 10px;
+  object-fit: contain;
+  height: 40px;
+}
+
+.login-container {
+  border: 1px solid #ddd;
+  padding: 2rem;
+  width: 500px;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  text-align: left;
+}
+
+input {
+  margin: 0.3rem 0;
+  padding: 0.5rem;
+}
+
+button {
+  background: #f0c14b;
+  border: 1px solid;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  &:hover {
+    background: #ddb347;
+  }
+}
+
+.account{
+  background: #dddddd !important;
+  margin: 5px;
+}
