@@ -41,9 +41,9 @@ function Product(props) {
 }
 
 const mapStateToProps = (state) => ({
-    count: state.counter.count,
-    total: state.counter.total,
-    items: state.counter.items,
+    count: state.basket.count,
+    total: state.basket.total,
+    items: state.basket.items,
 });
 
 export default connect(mapStateToProps, { addToBasket })(Product);

@@ -5,7 +5,7 @@ import userSlice from './user/userSlice';
 
 // Combine reducers
 const rootReducer = combineReducers({
-  counter: basketReducer,
+  basket: basketReducer,
   user: userSlice
   // Add more reducers here as needed
 });

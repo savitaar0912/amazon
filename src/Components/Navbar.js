@@ -89,7 +89,7 @@ function Navbar(props) {
   )
 }
 const mapStateToProps = (state) => ({
-  count: state.counter.count,
+  count: state.basket.count,
 });
 
 export default connect(mapStateToProps)(Navbar);

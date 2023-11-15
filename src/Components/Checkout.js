@@ -31,8 +31,8 @@ function Checkout(props) {
 }
 
 const mapStateToProps = (state) => ({
-    count: state.counter.count,
-    total: state.counter.total,
+    count: state.basket.count,
+    total: state.basket.total,
 });
 
 export default connect(mapStateToProps)(Checkout);

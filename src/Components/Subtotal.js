@@ -25,7 +25,7 @@ function Subtotal(props) {
 }
 
 // const mapStateToProps = (state) => ({
-//     total: state.counter.total, // Map the total from the Redux state to props
+//     total: state.basket.total, // Map the total from the Redux state to props
 // });
 
 export default Subtotal;
