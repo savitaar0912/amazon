@@ -9,9 +9,9 @@ import CheckoutProduct from './CheckoutProduct';
 function Checkout(props) {
 
     const basketItems = useSelector(selectBasket)
-
-    const title = { ...basketItems }
-    console.log(title)
+    console.log(basketItems)
+    // const title = [...basketItems]
+    // console.log(title)
 
     return (
         <div className='checkout'>
