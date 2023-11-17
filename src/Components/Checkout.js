@@ -5,11 +5,13 @@ import { connect } from 'react-redux';
 import { useSelector } from 'react-redux/es/hooks/useSelector';
 import { selectBasket } from '../Store/basketSlice/addbasket_reducer';
 import CheckoutProduct from './CheckoutProduct';
+import { selectUserEmail } from '../Store/user/userSlice';
 
 function Checkout(props) {
 
     const basketItems = useSelector(selectBasket)
     console.log(basketItems)
+    const userEmail = useSelector(selectUserEmail)
     // const title = [...basketItems]
     // console.log(title)
 
@@ -19,6 +21,7 @@ function Checkout(props) {
                 <img className='checkout_ad' src="https://images-na.ssl-images-amazon.com/images/G/02/UK_CCMP/TM/OCC_Amazon1._CB423492668_.jpg"
                     alt="" />
                 <h2 className="checkout_title">
+                    <p>Hello {userEmail} </p>
                     Your Cart is Ready
                 </h2>
                 {basketItems.map((item) => {
