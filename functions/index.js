@@ -4,7 +4,9 @@ const functions = require("firebase-functions");
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-const stripe = require("stripe")( "sk_test_51ODPWcSBh8ydk88lQEMIAdWNUYB8eJ5C4xsWYCO8BYQRVwUnrMhUnU1geXk9aUcIr8nbs7Z1TfjaBEZRFyjih78d00PbLe2dxi");
+const stripe = require("stripe")(
+  "sk_test_51ODPWcSBh8ydk88lQEMIAdWNUYB8eJ5C4xsWYCO8BYQRVwUnrMhUnU1geXk9aUcIr8nbs7Z1TfjaBEZRFyjih78d00PbLe2dxi"
+);
 
 // App configuration
 const app = express();
@@ -13,7 +15,7 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
-// API routes
+// API routes 
 app.get("/", (req, res) => {
   res.status(200).send("Hello There");
 });
@@ -27,7 +29,7 @@ app.post("/payments/create", async (req, res) => {
     currency: "Rs",
   });
 
-  res.status(200).json({clientSecret: paymentIntent.client_secret});
+  res.status(200).json({ clientSecret: paymentIntent.client_secret });
 });
 
 // Listen will give an app link to get line 19
