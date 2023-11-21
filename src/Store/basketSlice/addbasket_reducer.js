@@ -36,5 +36,6 @@ const basketSlice = createSlice({
 
 export const { addToBasket, removeFromBasket } = basketSlice.actions;
 export const selectBasket = (state) => state.basket.items;
+export const selectTotal = (state) => state.basket.total;
 
 export default basketSlice.reducer;

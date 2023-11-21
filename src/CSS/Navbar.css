@@ -1,12 +1,15 @@
 /* Default styles for larger screens */
 .nav_bar {
-  color: white;
+  align-items: center;
   background-color: #131921;
+  justify-content: center;
+  color: #fff;
   display: flex;
   flex-direction: row;
-  align-items: center;
   height: 60px;
   position: sticky;
+  margin: auto;
+  width: -webkit-fill-available;
   top: 0;
   z-index: 1000;
 }

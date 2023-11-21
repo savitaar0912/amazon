@@ -19,7 +19,7 @@ function Subtotal(props) {
                     <span>This order contains a gift</span>
                 </div>
                 <div className='checkout_btn'>
-                    <button onClick={() => {navigate('/payment')}} className='btn-close-white'>Place Order</button>
+                    <button onClick={() => { total>0 && navigate('/payment')}} className='btn-close-white'>Place Order</button>
                 </div>
             </div>
         </div>
