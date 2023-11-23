@@ -19,47 +19,66 @@ export default function Payment() {
     const userEmail = useSelector(selectUserEmail)
 
     const [error, setError] = useState(null)
-    const [disabled, setDisabled] = useState(true)
+    const [disable, setDisable] = useState(true)
     const [succeeded, setSucceeded] = useState(true)
-    const [processing, setProcessing] = useState("")
+    const [processing, setProcessing] = useState(false)
     const [clientSecret, setClientSecret] = useState(true)
 
 
     useEffect(() => {
-        //generate a stripe secret which allows us to charge a user
+        // generate a stripe secret which allows us to charge a user
         const getClientSecret = async () => {
-            const response = await axios({
-                method: 'post',
-                url: `/payments/create?total=${total}`
-            })
-            setClientSecret(response.data.clientSecret)
-        }
-        getClientSecret()
-    }, [basket])
+            try {
+                const response = await axios.post(`/payments/create?total=${total}`, null, { withCredentials: true });
+                console.log(response)
+                console.log(response.data.clientSecret)
+                setClientSecret(response.data.clientSecret);
+            } catch (error) {
+                console.error('Error fetching client secret:', error);
+            }
+        };
+        getClientSecret();
+    }, [basket]);
 
-
+    console.log("The secret is >>>>", clientSecret)
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        setProcessing(true)
+        setProcessing(true);
 
-        // const cardElement = elements.getElement(CardElement);
+        const cardElement = elements.getElement(CardElement);
 
-        const payload = await stripe.confirmCardPayment(clientSecret, {
-            payment_method: {
-                card: elements.getElement(CardElement)
+        try {
+            const payload = await stripe.confirmCardPayment(clientSecret, {
+                payment_method: {
+                    card: cardElement,
+                },
+            });
+
+            if (payload.error) {
+                setError(`Payment failed: ${payload.error.message}`);
+                setSucceeded(true);
+            } else {
+                setError(null);
+                setSucceeded(false);
+                setProcessing(false);
+                navigate('/');
             }
-        }).then(({paymentIntent}) => {
-            // paymentIntent = payment confirmation
-            setSucceeded(true)
-            setError(null)
-            setProcessing(false)
-            navigate('/orders')
-        })
-    }
+        } catch (error) {
+            console.error('Error confirming card payment:', error);
+            setError('An error occurred, please try again.');
+            setProcessing(false);
+        }
+    };
+
+    console.log("error", error)
+    console.log("processing", processing)
+    console.log("succeeded", succeeded)
+    console.log("disable", disable)
 
     const handleChange = (e) => {
-        setDisabled(e.empty)
+        setDisable(e.empty)
+        setSucceeded(false)
         setError(e.error ? e.error.message : "")
     }
 
@@ -94,8 +113,11 @@ export default function Payment() {
                     <div className="payment-card">
                         <form onSubmit={handleSubmit}>
                             <CardElement className='card-element' onChange={handleChange} />
-                            <button className='payment_paybtn' type="submit" disabled={processing || disabled || succeeded}>
-                                {processing ? 'Processing' : 'Buy Now'}
+                            <div><h3>Order Total :{total}</h3></div>
+                            <button className='payment_paybtn' type="submit" disabled={processing || disable || succeeded}>
+                                <span>
+                                    {processing ? <p>Processing</p> : 'Buy Now'}
+                                </span>
                             </button>
                             {error && <div>{error}</div>}
                         </form>
