@@ -25,11 +25,11 @@ app.get("/", (req, res) => {
 });
 
 app.post("/payments/create", async (req, res) => {
-  const total = req.query.total;
+  const total = req.query.total ;
   console.log("Payment Req Received", total);
 
   const paymentIntent = await stripe.paymentIntents.create({
-    amount: total,
+    amount: total*100,
     currency: "INR",
   });
 
