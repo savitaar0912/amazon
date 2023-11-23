@@ -1,18 +1,20 @@
 import '../CSS/Payment.css'
 import React, { useEffect, useState } from 'react'
-import { useSelector } from 'react-redux'
-import { selectBasket, selectTotal } from '../Store/basketSlice/addbasket_reducer'
+import { useDispatch, useSelector } from 'react-redux'
+import { emptyBasket, selectBasket, selectTotal } from '../Store/basketSlice/addbasket_reducer'
 import { selectUserEmail } from '../Store/user/userSlice'
 import CheckoutProduct from './CheckoutProduct'
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 import axios from '../axios'
 import { useNavigate } from 'react-router-dom'
+import { db } from "../firebase"
 
 export default function Payment() {
 
     const stripe = useStripe();
     const elements = useElements();
     const navigate = useNavigate()
+    const dispatch = useDispatch()
 
     const basket = useSelector(selectBasket)
     const total = useSelector(selectTotal)
@@ -23,7 +25,6 @@ export default function Payment() {
     const [succeeded, setSucceeded] = useState(true)
     const [processing, setProcessing] = useState(false)
     const [clientSecret, setClientSecret] = useState(true)
-
 
     useEffect(() => {
         // generate a stripe secret which allows us to charge a user
@@ -38,7 +39,7 @@ export default function Payment() {
             }
         };
         getClientSecret();
-    }, [basket]);
+    }, [basket,total]);
 
     console.log("The secret is >>>>", clientSecret)
 
@@ -53,16 +54,31 @@ export default function Payment() {
                 payment_method: {
                     card: cardElement,
                 },
+            }).then((paymentIntent) => {
+                console.log("paymentIntent",paymentIntent.paymentIntent)
+                console.log("paymentIntent amount",paymentIntent.paymentIntent.amount)
+                
+                db
+                    .collection('users')
+                    .doc(userEmail)
+                    .collection('orders')
+                    .doc(paymentIntent.id)
+                    .set({
+                        basket: basket,
+                        amount: total,
+                        created: paymentIntent.paymentIntent.created,
+                    });
             });
 
-            if (payload.error) {
+            if (payload && payload.error) {
                 setError(`Payment failed: ${payload.error.message}`);
                 setSucceeded(true);
             } else {
                 setError(null);
                 setSucceeded(false);
                 setProcessing(false);
-                navigate('/');
+                dispatch(emptyBasket());
+                navigate('/orders');
             }
         } catch (error) {
             console.error('Error confirming card payment:', error);

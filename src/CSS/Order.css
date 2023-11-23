@@ -1,0 +1,24 @@
+.order{
+    background-color: white;
+    margin: 35px;
+    padding: 40px;
+    position: relative;
+}
+.orders p{
+    font-size: x-large;
+    font-weight: 500;
+}
+.order_id{
+    position: absolute;
+    top: 35px;
+    right: 40px;
+    font-size: x-small !important;
+}
+
+.order_total{
+    text-align: right;
+}
+
+.CheckoutProduct{
+    margin-top: 30px !important;
+}

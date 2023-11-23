@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 
 export default function CheckoutProduct(props) {
 
-    const { title, price, rating, image } = props;
+    const { title, price, rating, image, hideKey } = props;
     const dispatch = useDispatch();
 
     const handleRemoveFromCart = () => {
@@ -35,7 +35,7 @@ export default function CheckoutProduct(props) {
                             })}
                         </p>
                         <div className="removecart">
-                            <button onClick={handleRemoveFromCart}>Remove from Cart</button>
+                            {!hideKey && <button onClick={handleRemoveFromCart}>Remove from Cart</button>}
                         </div>
                     </div>
                 </div>

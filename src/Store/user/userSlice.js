@@ -7,17 +7,15 @@ const initialState = {
 const userSlice = createSlice({
     name: 'user',
     initialState,
-    reducers:{
-        setUserLogin:(state,action) =>{
+    reducers: {
+        setUserLogin: (state, action) => {
             state.email = action.payload.email;
         },
-        setUserLogout:()=>{
-            return null;
-        }
+        setUserLogout: () => initialState,
     }
 })
 
-export const {setUserLogin , setUserLogout} = userSlice.actions;
+export const { setUserLogin, setUserLogout } = userSlice.actions;
 export const selectUser = (state) => state.user
 export const selectUserEmail = (state) => (state.user ? state.user.email : null);
 

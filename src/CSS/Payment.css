@@ -40,6 +40,11 @@ form {
   color: #424770;
 }
 
+.card-element + div {
+  margin-left: 45px;
+  margin-top: 20px;
+}
+
 .card-element::placeholder {
   color: #aab7c4;
 }
@@ -48,7 +53,7 @@ form {
   color: #9e2146;
 }
 
-.payment_paybtn{
+.payment_paybtn {
   width: 150px;
   margin: auto;
   margin-top: 50px;

@@ -3,7 +3,7 @@ import React from 'react'
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import SearchIcon from '@mui/icons-material/Search';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { connect, useDispatch, useSelector } from "react-redux";
 import { selectUserEmail, setUserLogout } from "../Store/user/userSlice";
 import { auth } from "../firebase";
@@ -12,6 +12,7 @@ function Navbar(props) {
 
   const userEmail = useSelector(selectUserEmail)
   const dispatch = useDispatch()
+  const navigate = useNavigate()
 
   const handleAuthentication = () => {
     console.log('handleAuthentication called');
@@ -21,6 +22,7 @@ function Navbar(props) {
         .then(() => {
           console.log('Sign-out successful');
           dispatch(setUserLogout());
+          navigate('/')
         })
         .catch((error) => {
           console.error('Sign-out error:', error.message);
@@ -61,7 +63,7 @@ function Navbar(props) {
         <Link to={!userEmail && '/login'}>
           <div className="navbar_option" onClick={handleAuthentication}>
             <span className="line1">
-              Hello, {userEmail ? 'Sign out' : 'Sign In'}
+              Hello, {userEmail ? `${userEmail.slice(0, userEmail.indexOf('@'))}` : 'Sign In'}
             </span>
             <span className="line2">
               Accounts & Lists
@@ -69,15 +71,17 @@ function Navbar(props) {
           </div>
         </Link>
 
-
-        <div className="navbar_option">
-          <span className="line1">
-            Returns
-          </span>
-          <span className="line2">
-            & Orders
-          </span>
-        </div>
+        <Link to='/orders'>
+          <div className="navbar_option">
+            <span className="line1">
+              Returns
+            </span>
+            <span className="line2">
+              & Orders
+            </span>
+          </div>
+        </Link>
+        
         <div className="navbar_opt">
           <Link to="/checkout">
             <ShoppingCartIcon className="navbar_cart" />

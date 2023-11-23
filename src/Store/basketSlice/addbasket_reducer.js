@@ -30,11 +30,12 @@ const basketSlice = createSlice({
         state.count -= 1;
         state.total -= action.payload.price;
       }
-    }
+    },
+    emptyBasket: () => initialState,
   },
 });
 
-export const { addToBasket, removeFromBasket } = basketSlice.actions;
+export const { addToBasket, removeFromBasket, emptyBasket } = basketSlice.actions;
 export const selectBasket = (state) => state.basket.items;
 export const selectTotal = (state) => state.basket.total;
 
