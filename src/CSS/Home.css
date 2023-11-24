@@ -4,6 +4,7 @@
   justify-content: center;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 50px;
   /* max-width: 1500px; */
 }
 
@@ -19,4 +20,15 @@
   z-index: 1;
   margin-left: 5px;
   margin-right: 5px;
+}
+
+@media screen and (max-width: 1000px) {
+  .home_row{
+    flex-direction: column;
+    width: 80%;
+  }
+  .home{
+    width: 88%;
+    margin: 0;
+  }
 }
