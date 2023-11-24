@@ -54,19 +54,20 @@ export default function Payment() {
                 payment_method: {
                     card: cardElement,
                 },
-            }).then((paymentIntent) => {
-                console.log("paymentIntent",paymentIntent.paymentIntent)
-                console.log("paymentIntent amount",paymentIntent.paymentIntent.amount)
+            }).then((payload) => {
+                console.log("payload", payload)
+                console.log("paymentIntent",payload.paymentIntent)
+                console.log("paymentIntent amount",payload.paymentIntent.amount)
                 
                 db
                     .collection('users')
                     .doc(userEmail)
                     .collection('orders')
-                    .doc(paymentIntent.id)
+                    .doc(payload.id)
                     .set({
                         basket: basket,
                         amount: total,
-                        created: paymentIntent.paymentIntent.created,
+                        created: payload.paymentIntent.created,
                     });
             });
 
