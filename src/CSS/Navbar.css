@@ -105,7 +105,7 @@ Link {
 /* Media query for screens with a maximum width of 768px */
 @media screen and (max-width: 1000px) {
   .nav_bar {
-    width: 88%;
+    width: 100%;
     align-items: center;
     background-color: #131921;
     justify-content: center;
