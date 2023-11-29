@@ -6,7 +6,7 @@ const cors = require("cors");
 // eslint-disable-next-line max-len
 const stripe = require("stripe")("sk_test_51ODPWcSBh8ydk88lQEMIAdWNUYB8eJ5C4xsWYCO8BYQRVwUnrMhUnU1geXk9aUcIr8nbs7Z1TfjaBEZRFyjih78d00PbLe2dxi");
 const corsOptions = {
-  origin: ["https://fir-f4f2f.web.app", "http://localhost:3000", "http://localhost:5000"],
+  origin: ["https://fir-f4f2f.web.app", "https://localhost:3000", "https://localhost:5000"],
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   credentials: true,
   optionsSuccessStatus: 204,
@@ -41,4 +41,4 @@ app.post("/payments/create", async (req, res) => {
 exports.api = functions.https.onRequest(app);
 
 // example endpoint
-// http://127.0.0.1:5001/fir-f4f2f/us-central1/api
+// https://127.0.0.1:5001/fir-f4f2f/us-central1/api

@@ -34,7 +34,7 @@ function Navbar(props) {
     <div className='nav_bar'>
       <div className="navbar_logo">
         <Link to="/">
-          <img src="http://pngimg.com/uploads/amazon/amazon_PNG11.png" alt="amazon.in" />
+          <img src="https://pngimg.com/uploads/amazon/amazon_PNG11.png" alt="amazon.in" />
         </Link>
       </div>
 
