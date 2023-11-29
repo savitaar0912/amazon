@@ -39,7 +39,7 @@ export default function Payment() {
             }
         };
         getClientSecret();
-    }, [basket,total]);
+    }, []);
 
     console.log("The secret is >>>>", clientSecret)
 
