@@ -7,7 +7,7 @@ const cors = require("cors");
 const stripe = require("stripe")("sk_test_51ODPWcSBh8ydk88lQEMIAdWNUYB8eJ5C4xsWYCO8BYQRVwUnrMhUnU1geXk9aUcIr8nbs7Z1TfjaBEZRFyjih78d00PbLe2dxi");
 
 const corsOptions = {
-  origin: ["http://fir-f4f2f.web.app", "http://localhost:3000",  "http://localhost:3000/amazon",  "http://localhost:5000" , "http://https://savitaar0912.github.io/amazon"],
+  origin: ["http://fir-f4f2f.web.app", "http://localhost:3000", "http://localhost:5000" , "http://https://savitaar0912.github.io"],
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   credentials: true,
   optionsSuccessStatus: 204,
