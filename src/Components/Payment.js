@@ -39,7 +39,10 @@ export default function Payment() {
             }
         };
         getClientSecret();
+<<<<<<< HEAD
         // eslint-disable-next-line
+=======
+>>>>>>> 3fc5ef99990969e221910504ded479de5089e8f3
     }, []);
 
     console.log("The secret is >>>>", clientSecret)

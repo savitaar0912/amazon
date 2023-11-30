@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [debug] [2023-11-30T09:58:36.353Z] ----------------------------------------------------------------------
 [debug] [2023-11-30T09:58:36.360Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\singh\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --debug
 [debug] [2023-11-30T09:58:36.362Z] CLI Version:   12.9.1
@@ -66,6 +67,59 @@
 [debug] [2023-11-30T09:58:56.239Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/fir-f4f2f/configs {}
 [debug] [2023-11-30T09:58:56.243Z] Validating nodejs source
 [debug] [2023-11-30T09:58:59.811Z] > [functions] package.json contents: {
+=======
+[debug] [2023-11-29T16:09:25.587Z] ----------------------------------------------------------------------
+[debug] [2023-11-29T16:09:25.593Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\singh\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js emulators:start
+[debug] [2023-11-29T16:09:25.594Z] CLI Version:   12.9.1
+[debug] [2023-11-29T16:09:25.596Z] Platform:      win32
+[debug] [2023-11-29T16:09:25.596Z] Node Version:  v18.18.2
+[debug] [2023-11-29T16:09:25.598Z] Time:          Wed Nov 29 2023 21:39:25 GMT+0530 (India Standard Time)
+[debug] [2023-11-29T16:09:25.599Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-11-29T16:09:26.008Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-11-29T16:09:26.009Z] > authorizing via signed-in user (singhshashank875@gmail.com)
+[info] i  emulators: Starting emulators: functions, hosting {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: functions, hosting"}}
+[debug] [2023-11-29T16:09:26.074Z] [logging] Logging Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-11-29T16:09:26.074Z] [hosting] Hosting Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-11-29T16:09:26.075Z] assigned listening specs for emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"hosting":[{"address":"127.0.0.1","family":"IPv4","port":5000}]},"metadata":{"message":"assigned listening specs for emulators"}}
+[debug] [2023-11-29T16:09:26.102Z] [hub] writing locator at C:\Users\singh\AppData\Local\Temp\hub-fir-f4f2f.json
+[debug] [2023-11-29T16:09:26.161Z] [functions] Functions Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-11-29T16:09:26.162Z] [eventarc] Eventarc Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-11-29T16:09:26.162Z] late-assigned ports for functions and eventarc emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"hosting":[{"address":"127.0.0.1","family":"IPv4","port":5000}],"functions":[{"address":"127.0.0.1","family":"IPv4","port":5001}],"eventarc":[{"address":"127.0.0.1","family":"IPv4","port":9299}]},"metadata":{"message":"late-assigned ports for functions and eventarc emulators"}}
+[warn] !  functions: The following emulators are not running, calls to these services from the Functions emulator will affect production: auth, firestore, database, pubsub, storage {"metadata":{"emulator":{"name":"functions"},"message":"The following emulators are not running, calls to these services from the Functions emulator will affect production: \u001b[1mauth, firestore, database, pubsub, storage\u001b[22m"}}
+[debug] [2023-11-29T16:09:26.177Z] defaultcredentials: writing to file C:\Users\singh\AppData\Roaming\firebase\singhshashank875_gmail_com_application_default_credentials.json
+[debug] [2023-11-29T16:09:26.193Z] Setting GAC to C:\Users\singh\AppData\Roaming\firebase\singhshashank875_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to C:\\Users\\singh\\AppData\\Roaming\\firebase\\singhshashank875_gmail_com_application_default_credentials.json"}}
+[debug] [2023-11-29T16:09:26.200Z] > refreshing access token with scopes: []
+[debug] [2023-11-29T16:09:26.213Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2023-11-29T16:09:26.214Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-11-29T16:09:26.529Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2023-11-29T16:09:26.529Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-11-29T16:09:26.550Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/fir-f4f2f/adminSdkConfig [none]
+[debug] [2023-11-29T16:09:27.151Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/fir-f4f2f/adminSdkConfig 200
+[debug] [2023-11-29T16:09:27.152Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/fir-f4f2f/adminSdkConfig {"projectId":"fir-f4f2f","storageBucket":"fir-f4f2f.appspot.com"}
+[debug] [2023-11-29T16:09:27.189Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/fir-f4f2f/sites 
+[debug] [2023-11-29T16:09:28.557Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/fir-f4f2f/sites 200
+[debug] [2023-11-29T16:09:28.558Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/fir-f4f2f/sites {"sites":[{"name":"projects/fir-f4f2f/sites/fir-f4f2f","defaultUrl":"https://fir-f4f2f.web.app","appId":"1:362720150222:web:a59b4b881f87f20880c69f","type":"DEFAULT_SITE"}]}
+[debug] [2023-11-29T16:09:28.558Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/fir-f4f2f/webApps/1:362720150222:web:a59b4b881f87f20880c69f/config [none]
+[debug] [2023-11-29T16:09:29.638Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/fir-f4f2f/webApps/1:362720150222:web:a59b4b881f87f20880c69f/config 200
+[debug] [2023-11-29T16:09:29.638Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/fir-f4f2f/webApps/1:362720150222:web:a59b4b881f87f20880c69f/config {"projectId":"fir-f4f2f","appId":"1:362720150222:web:a59b4b881f87f20880c69f","storageBucket":"fir-f4f2f.appspot.com","apiKey":"AIzaSyA0bRs0w9QYPEpQGVAtXEk2DukZ6cMyK7w","authDomain":"fir-f4f2f.firebaseapp.com","messagingSenderId":"362720150222","measurementId":"G-1LKNELP7X3"}
+[debug] [2023-11-29T16:09:29.651Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/fir-f4f2f [none]
+[debug] [2023-11-29T16:09:30.121Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/fir-f4f2f 200
+[debug] [2023-11-29T16:09:30.121Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/fir-f4f2f {"projectId":"fir-f4f2f","projectNumber":"362720150222","displayName":"Amazon","name":"projects/fir-f4f2f","resources":{"hostingSite":"fir-f4f2f"},"state":"ACTIVE","etag":"1_fcc3ae73-a7fa-4a1c-878b-3afbff65b7ea"}
+[info] i  hosting[fir-f4f2f]: Serving hosting files from: build {"metadata":{"emulator":{"name":"hosting"},"message":"Serving hosting files from: \u001b[1mbuild\u001b[22m"}}
+[info] +  hosting[fir-f4f2f]: Local server: http://127.0.0.1:5000 {"metadata":{"emulator":{"name":"hosting"},"message":"Local server: \u001b[4m\u001b[1mhttp://127.0.0.1:5000\u001b[22m\u001b[24m"}}
+[debug] [2023-11-29T16:09:30.177Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2023-11-29T16:09:30.177Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2023-11-29T16:09:30.178Z] Starting Emulator UI with command {"binary":"node","args":["C:\\Users\\singh\\.cache\\firebase\\emulators\\ui-v1.11.7\\server\\server.js"],"optionalArgs":[],"joinArgs":false} {"metadata":{"emulator":{"name":"ui"},"message":"Starting Emulator UI with command {\"binary\":\"node\",\"args\":[\"C:\\\\Users\\\\singh\\\\.cache\\\\firebase\\\\emulators\\\\ui-v1.11.7\\\\server\\\\server.js\"],\"optionalArgs\":[],\"joinArgs\":false}"}}
+[info] i  ui: Emulator UI logging to ui-debug.log {"metadata":{"emulator":{"name":"ui"},"message":"Emulator UI logging to \u001b[1mui-debug.log\u001b[22m"}}
+[debug] [2023-11-29T16:09:30.538Z] Web / API server started at 127.0.0.1:4000
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at 127.0.0.1:4000\n"}}
+[debug] [2023-11-29T16:09:30.538Z] Web / API server started at ::1:4000
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at ::1:4000\n"}}
+[info] i  functions: Watching "C:\FULL STACK DEV\ReactJS\amazon\functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"C:\\FULL STACK DEV\\ReactJS\\amazon\\functions\" for Cloud Functions..."}}
+[debug] [2023-11-29T16:09:30.750Z] Validating nodejs source
+[debug] [2023-11-29T16:09:35.983Z] > [functions] package.json contents: {
+>>>>>>> 3fc5ef99990969e221910504ded479de5089e8f3
   "name": "functions",
   "description": "Cloud Functions for Firebase",
   "scripts": {
@@ -82,8 +136,12 @@
   "main": "index.js",
   "dependencies": {
     "firebase-admin": "^11.8.0",
+<<<<<<< HEAD
     "firebase-functions": "^4.3.1",
     "stripe": "^14.5.0"
+=======
+    "firebase-functions": "^4.3.1"
+>>>>>>> 3fc5ef99990969e221910504ded479de5089e8f3
   },
   "devDependencies": {
     "eslint": "^8.15.0",
@@ -92,6 +150,7 @@
   },
   "private": true
 }
+<<<<<<< HEAD
 [debug] [2023-11-30T09:58:59.818Z] Building nodejs source
 [info] i  functions: Loading and analyzing source code for codebase default to determine what to deploy 
 [debug] [2023-11-30T09:58:59.822Z] Could not find functions.yaml. Must use http discovery
@@ -184,3 +243,33 @@
 [info] 
 [info] Project Console: https://console.firebase.google.com/project/fir-f4f2f/overview
 [info] Hosting URL: https://fir-f4f2f.web.app
+=======
+[debug] [2023-11-29T16:09:35.983Z] Building nodejs source
+[debug] [2023-11-29T16:09:35.987Z] Failed to find version of module node: reached end of search path C:\FULL STACK DEV\ReactJS\amazon\functions\node_modules
+[info] +  functions: Using node@18 from host. 
+[debug] [2023-11-29T16:09:35.999Z] Could not find functions.yaml. Must use http discovery
+[debug] [2023-11-29T16:09:36.043Z] Found firebase-functions binary at 'C:\FULL STACK DEV\ReactJS\amazon\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8295
+
+[debug] [2023-11-29T16:09:39.117Z] Got response from /__/functions.yaml {"endpoints":{"api":{"platform":"gcfv1","availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"httpsTrigger":{},"entryPoint":"api"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[info] +  functions: Loaded functions definitions from source: api. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: api."}}
+[info] +  functions[us-central1-api]: http function initialized (http://127.0.0.1:5001/fir-f4f2f/us-central1/api). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/fir-f4f2f/us-central1/api)."}}
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+│ i  View Emulator UI at http://127.0.0.1:4000/               │
+└─────────────────────────────────────────────────────────────┘
+
+┌───────────┬────────────────┬─────────────────────────────────┐
+│ Emulator  │ Host:Port      │ View in Emulator UI             │
+├───────────┼────────────────┼─────────────────────────────────┤
+│ Functions │ 127.0.0.1:5001 │ http://127.0.0.1:4000/functions │
+├───────────┼────────────────┼─────────────────────────────────┤
+│ Hosting   │ 127.0.0.1:5000 │ n/a                             │
+└───────────┴────────────────┴─────────────────────────────────┘
+  Emulator Hub running at 127.0.0.1:4400
+  Other reserved ports: 4500
+
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 
+>>>>>>> 3fc5ef99990969e221910504ded479de5089e8f3
