@@ -39,6 +39,7 @@ export default function Payment() {
             }
         };
         getClientSecret();
+        // eslint-disable-next-line
     }, []);
 
     console.log("The secret is >>>>", clientSecret)
