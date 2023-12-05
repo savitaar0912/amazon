@@ -16,3 +16,13 @@
   margin-top: 10px;
   margin-bottom: 10px;
 }
+
+@media screen and (max-width: 1000px) {
+  .checkout{
+    display: flex;
+    flex-direction: column;
+  }
+  .checkout_left{
+    width: 100%;
+  }
+}

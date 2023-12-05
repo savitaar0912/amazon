@@ -127,20 +127,12 @@ Link {
     position: absolute;
     left: 0px;
   }
-  .flag {
-    display: none;
-  }
-  .flag + span {
-    display: none;
-  }
-  .address,
-  .searchbox {
-    display: none;
-  }
   .navbar_nav {
     display: flex;
-    flex-wrap: wrap;
     position: absolute;
-    right: -40px;
+    right: -50px;
+  }
+  .hide {
+    display: none;
   }
 }

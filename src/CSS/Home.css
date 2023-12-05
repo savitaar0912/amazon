@@ -24,11 +24,16 @@
 
 @media screen and (max-width: 1000px) {
   .home_row{
+    display: flex;
     flex-direction: column;
     width: 80%;
+    margin: auto;
   }
   .home{
     width: 100%;
     margin: 0;
+  }
+  .home_img{
+    margin: 0px;
   }
 }

@@ -58,3 +58,34 @@ form {
   margin: auto;
   margin-top: 50px;
 }
+
+@media screen and (max-width: 1000px) {
+  .payment > h1 {
+    font-size: xx-large;
+    margin: 0px;
+  }
+  .payment-section {
+    display: flex;
+    justify-content: space-between;
+  }
+  .payment-address {
+    margin-left: 75px;
+  }
+  .card-element {
+    margin-left: 20px;
+    /* font-size: 16px; */
+    width: 40vw;
+    color: #424770;
+  }
+  .payment_paybtn {
+    margin: auto;
+    margin-top: 10px;
+  }
+  h3 {
+    font-size: x-large;
+    margin: 0;
+  }
+  .card-element + div {
+    margin-left: 10px;
+  }
+}

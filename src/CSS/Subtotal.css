@@ -45,3 +45,16 @@
   border-color: #a88734 #9c7e31 #846a29;
   color: black;
 }
+
+@media screen and (max-width: 1000px) {
+  .subtotal{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    height: 150px;
+    background-color: #f3f3f3;
+    border: 1px solid #dddddd;
+    border-radius: 3px;
+  }
+}

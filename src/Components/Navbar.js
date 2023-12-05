@@ -38,7 +38,7 @@ function Navbar(props) {
         </Link>
       </div>
 
-      <div className="address navbar_option">
+      <div className="address navbar_option hide">
         <span className="line1">
           Deliver to
           <LocationOnIcon className="location" />
@@ -48,14 +48,14 @@ function Navbar(props) {
         </span>
       </div>
 
-      <div className="searchbox navbar_opt">
+      <div className="searchbox navbar_opt hide">
         <input type="search" name="search" id="search" />
         <SearchIcon className="navbar_search" />
       </div>
 
       <div className="navbar_nav">
 
-        <div className="navbar_opt">
+        <div className="navbar_opt hide">
           <img className="flag" src="https://media.istockphoto.com/id/1349796126/photo/flag-of-india.webp?b=1&s=170667a&w=0&k=20&c=1pWIs3VkXqu1wNBGcztG5IixaN4oGA-nul4Ynb1G2QY=" alt="" />
           <span className='line2'>EN</span>
         </div>
@@ -72,7 +72,7 @@ function Navbar(props) {
         </Link>
 
         <Link to='/orders'>
-          <div className="navbar_option">
+          <div className="navbar_option hide">
             <span className="line1">
               Returns
             </span>
