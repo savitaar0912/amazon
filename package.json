@@ -1,6 +1,5 @@
 {
   "name": "amazon",
-  "homepage": "https://savitaar0912.github.io/amazon",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
