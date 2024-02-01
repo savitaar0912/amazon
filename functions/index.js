@@ -6,19 +6,19 @@ const cors = require("cors");
 // eslint-disable-next-line max-len
 const stripe = require("stripe")("sk_test_51ODPWcSBh8ydk88lQEMIAdWNUYB8eJ5C4xsWYCO8BYQRVwUnrMhUnU1geXk9aUcIr8nbs7Z1TfjaBEZRFyjih78d00PbLe2dxi");
 
-const corsOptions = {
-  origin: ["http://fir-f4f2f.web.app", "http://localhost:3000", "http://localhost:5000", "http://https://savitaar0912.github.io"],
-  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-  credentials: true,
-  optionsSuccessStatus: 204,
-};
+// const corsOptions = {
+//   origin: "*",
+//   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+//   credentials: true,
+//   optionsSuccessStatus: 204,
+// };
 
 
 // App configuration
 const app = express();
 
 // Middleware
-app.use(cors(corsOptions));
+app.use(cors({origin: true}));
 app.use(bodyParser.json());
 
 // API routes

@@ -30,6 +30,7 @@
   },
   "scripts": {
     "start": "concurrently \"npm run client\"",
+    "both": "concurrently \"npm run client\" \"npm run server\" ",
     "client": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
