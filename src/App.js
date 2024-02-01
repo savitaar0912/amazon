@@ -19,8 +19,8 @@ function App() {
     <>
       <Router>
         <Navbar />
-        <Home />
         <Routes>
+          <Route path='/' element={<Home />} />
           <Route path='/checkout' element={<Checkout />} />
           <Route path='/login' element={<Login />} />
           <Route path='/orders' element={<Orders />} />
