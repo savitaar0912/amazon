@@ -6,19 +6,18 @@ const cors = require("cors");
 // eslint-disable-next-line max-len
 const stripe = require("stripe")("sk_test_51ODPWcSBh8ydk88lQEMIAdWNUYB8eJ5C4xsWYCO8BYQRVwUnrMhUnU1geXk9aUcIr8nbs7Z1TfjaBEZRFyjih78d00PbLe2dxi");
 
-// const corsOptions = {
-//   origin: "*",
-//   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-//   credentials: true,
-//   optionsSuccessStatus: 204,
-// };
-
+const corsOptions = {
+  origin: "http://localhost:3000/",
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  // credentials: true,
+  optionsSuccessStatus: 204,
+};
 
 // App configuration
 const app = express();
 
 // Middleware
-app.use(cors({origin: true}));
+app.use(cors(corsOptions));
 app.use(bodyParser.json());
 
 // API routes
@@ -48,4 +47,4 @@ app.post("/payments/create", async (req, res) => {
 exports.api = functions.https.onRequest(app);
 
 // example endpoint
-// http://127.0.0.1:5001/fir-f4f2f/us-central1/api
+// http://127.0.0.1:5001/aclone-2c628/us-central1/api

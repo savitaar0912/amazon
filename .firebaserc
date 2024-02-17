@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "fir-f4f2f"
-  }
+    "default": "aclone-2c628",
+    "active": "aclone-2c628"
+  },
+  "targets": {},
+  "etags": {}
 }

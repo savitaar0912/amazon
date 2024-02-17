@@ -5,13 +5,13 @@ import 'firebase/compat/firestore';
 import 'firebase/compat/storage';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyA0bRs0w9QYPEpQGVAtXEk2DukZ6cMyK7w",
-  authDomain: "fir-f4f2f.firebaseapp.com",
-  projectId: "fir-f4f2f",
-  storageBucket: "fir-f4f2f.appspot.com",
-  messagingSenderId: "362720150222",
-  appId: "1:362720150222:web:a59b4b881f87f20880c69f",
-  measurementId: "G-1LKNELP7X3"
+  apiKey: "AIzaSyCf9_iBgfrOVTZO7wtKgL7XWrX4t-hVH1g",
+  authDomain: "aclone-2c628.firebaseapp.com",
+  projectId: "aclone-2c628",
+  storageBucket: "aclone-2c628.appspot.com",
+  messagingSenderId: "874239382847",
+  appId: "1:874239382847:web:9b5398193d33046e0a6f8a",
+  measurementId: "G-L3EP8KR60B"
 };
 
 // Initialize Firebase
