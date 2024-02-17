@@ -30,7 +30,7 @@ export default function Payment() {
         // generate a stripe secret which allows us to charge a user
         const getClientSecret = async () => {
             try {
-                const response = await axios.post(`/payments/create?total=${total}`, null, { withCredentials: true });
+                const response = await axios.post(`/payments/create?total=${total}`, null);
                 console.log(response)
                 console.log(response.data.clientSecret)
                 setClientSecret(response.data.clientSecret);

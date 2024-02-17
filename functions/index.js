@@ -7,9 +7,9 @@ const cors = require("cors");
 const stripe = require("stripe")("sk_test_51ODPWcSBh8ydk88lQEMIAdWNUYB8eJ5C4xsWYCO8BYQRVwUnrMhUnU1geXk9aUcIr8nbs7Z1TfjaBEZRFyjih78d00PbLe2dxi");
 
 const corsOptions = {
-  origin: "http://localhost:3000/",
+  origin: true,
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-  // credentials: true,
+  credentials: true,
   optionsSuccessStatus: 204,
 };
 

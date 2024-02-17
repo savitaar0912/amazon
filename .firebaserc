@@ -1,7 +1,8 @@
 {
   "projects": {
     "default": "aclone-2c628",
-    "active": "aclone-2c628"
+    "active": "aclone-2c628",
+    "my-project-dev": "aclone-2c628"
   },
   "targets": {},
   "etags": {}
